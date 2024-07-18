@@ -1,4 +1,4 @@
-// encuesta2.js
+// encuesta1.js
 
 function calculateResults() {
     const form = document.getElementById("surveyForm");

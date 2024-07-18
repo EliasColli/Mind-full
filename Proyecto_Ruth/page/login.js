@@ -1,32 +1,25 @@
-// login.js
-const loginForm = document.getElementById('loginForm');
-const messageDiv = document.getElementById('message');
-
-loginForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-
+document.getElementById('loginForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+  
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-
-    try {
-        const response = await fetch('/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        });
-
-        const data = await response.json();
-
-        if (!response.ok) {
-            throw new Error(data.message || 'Error al iniciar sesión');
-        }
-
-        localStorage.setItem('token', data.token);
-        window.location.href = '/home.html'; // Cambiar a tu página de inicio
-
-    } catch (error) {
-        messageDiv.textContent = error.message;
+  
+    const response = await fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    });
+  
+    const messageDiv = document.getElementById('message');
+  
+    if (response.ok) {
+      // El servidor maneja la redirección, no necesitamos hacer nada más aquí.
+    } else {
+      const result = await response.json();
+      messageDiv.textContent = result.message;
+      messageDiv.style.color = 'red';
     }
-});
+  });
+  

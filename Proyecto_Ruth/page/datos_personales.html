@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Personales</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #007bff;
+            background-image: url("/img/fondo_inicio.jpg");
+            background-size: cover;
+            color: #181616;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px;
+            padding: 30px;
+            background-color: rgba(245, 236, 236, 0.8);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="/page/Ajustes.html" class="back-button">&larr;</a>
+    <div class="container">
+        <h1>Datos Personales</h1>
+        <div id="user-data">
+            <!-- Aquí se mostrarán los datos del usuario -->
+        </div>
+        <form id="edit-form" style="display:none;">
+            <div class="form-group">
+                <label for="first_name">Nombre</label>
+                <input type="text" class="form-control" id="first_name" name="first_name">
+            </div>
+            <div class="form-group">
+                <label for="last_name">Apellido</label>
+                <input type="text" class="form-control" id="last_name" name="last_name">
+            </div>
+            <div class="form-group">
+                <label for="phone_number">Teléfono</label>
+                <input type="text" class="form-control" id="phone_number" name="phone_number">
+            </div>
+            <div class="form-group">
+                <label for="address">Dirección</label>
+                <input type="text" class="form-control" id="address" name="address">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
+        <button class="btn btn-primary" id="edit-button" onclick="edit()">Editar</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/api/user', {
+                method: 'GET',
+                credentials: 'include'
+            })
+            .then(response => response.json())
+            .then(data => {
+                const userDataDiv = document.getElementById('user-data');
+                userDataDiv.innerHTML = `
+                    <p>Nombre: ${data.first_name}</p>
+                    <p>Apellido: ${data.last_name}</p>
+                    <p>Teléfono: ${data.phone_number}</p>
+                    <p>Dirección: ${data.address}</p>
+                    <p>Email: ${data.email}</p>
+                `;
+                document.getElementById('first_name').value = data.first_name;
+                document.getElementById('last_name').value = data.last_name;
+                document.getElementById('phone_number').value = data.phone_number;
+                document.getElementById('address').value = data.address;
+                document.getElementById('email').value = data.email;
+            })
+            .catch(error => {
+                console.error('Error al obtener datos del usuario:', error);
+            });
+        });
+
+        function edit() {
+            document.getElementById('user-data').style.display = 'none';
+            document.getElementById('edit-form').style.display = 'block';
+            document.getElementById('edit-button').style.display = 'none';
+        }
+
+        document.getElementById('edit-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const userData = {
+                first_name: formData.get('first_name'),
+                last_name: formData.get('last_name'),
+                phone_number: formData.get('phone_number'),
+                address: formData.get('address'),
+                email: formData.get('email')
+            };
+
+            fetch('/api/user', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify(userData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message === 'Datos actualizados correctamente') {
+                    alert('Datos actualizados correctamente');
+                    window.location.reload();
+                } else {
+                    alert('Error al actualizar datos');
+                }
+            })
+            .catch(error => {
+                console.error('Error al actualizar datos del usuario:', error);
+            });
+        });
+    </script>
+</body>
+</html>
