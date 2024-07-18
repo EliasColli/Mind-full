@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Emociones</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #e0f7fa; /* Color de fondo similar al de la imagen */
+        }
+        
+        .card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        
+        .card-header {
+            background-color: #80deea; /* Color similar al de la imagen */
+            border-bottom: none;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        
+        .btn-group {
+            width: 100%;
+        }
+        
+        .btn {
+            border-radius: 20px;
+        }
+        
+        .btn-outline-primary {
+            color: #80deea; /* Color de texto similar al de la imagen */
+            border-color: #80deea;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: #80deea; /* Color de fondo al hacer hover similar al de la imagen */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h1>Encuesta de Emociones</h1>
+            </div>
+            <div class="card-body">
+                <form id="surveyForm">
+                    <div class="mb-3">
+                        <label for="stressfulChallenges" class="form-label">¿Has enfrentado algún desafío o situación estresante durante el día de hoy?</label>
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="stressfulChallenges" id="stressfulChallenges1" value="Ninguno" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="stressfulChallenges1">Ninguno</label>
+
+                            <input type="radio" class="btn-check" name="stressfulChallenges" id="stressfulChallenges2" value="Algunos" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="stressfulChallenges2">Algunos</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="joyfulMoments" class="form-label">¿Has tenido momentos de alegría o satisfacción durante el día?</label>
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="joyfulMoments" id="joyfulMoments1" value="Si" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="joyfulMoments1">Sí</label>
+
+                            <input type="radio" class="btn-check" name="joyfulMoments" id="joyfulMoments2" value="No" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="joyfulMoments2">No</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="socialInteractions" class="form-label">¿Cómo han sido tus interacciones sociales hoy, experiencias buenas o malas?</label>
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="socialInteractions" id="socialInteractions1" value="Buenas" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="socialInteractions1">Buenas</label>
+
+                            <input type="radio" class="btn-check" name="socialInteractions" id="socialInteractions2" value="Malas" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="socialInteractions2">Malas</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="negativeFeelings" class="form-label">¿Has sentido ansiedad, preocupación o tristeza en algún momento del día?</label>
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="negativeFeelings" id="negativeFeelings1" value="Si" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="negativeFeelings1">Sí</label>
+
+                            <input type="radio" class="btn-check" name="negativeFeelings" id="negativeFeelings2" value="No" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="negativeFeelings2">No</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block"><a href="/encuestaf.html"></a>Finalizar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="results mt-3" id="results"></div>
+    </div>
+
+    <script src="/encuesta2.js"></script>
+</body>
+</html>

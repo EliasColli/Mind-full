@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Full</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        *
+        {
+            padding: 0;
+            border: 0;
+            margin: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 70px; /* Padding to prevent content from being hidden behind fixed navbar */
+            background-image: url('../img/fondo2.jpg'); /* Ruta a tu imagen de fondo */
+            background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+            background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace con el contenido */
+        }
+        .header {
+            text-align: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #56677a;
+            
+        }
+        .navbar {
+            background-color: #8295aa; /* Cambia el color de fondo de la barra de navegación a azul rey */
+        }
+        .btn-custom {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            background-color: #28a745;
+            color: white;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #fcfcfc;
+            text-decoration: none;
+        }
+        .navbar.fixed-top .navbar-brand,
+        .navbar.fixed-top .navbar-nav .nav-link {
+            color: rgb(8, 7, 7); /* Cambia el color del texto en la barra de navegación fija */
+        }
+        .center-item {
+            background-color: #ece1e194;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="logo">MIND FULL</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="./consejos.html" class="nav-link">CONSEJOS</a></li>
+                    <li class="nav-item"><a href="./infoPsicologos.html" class="nav-link">PSICOLOGOS</a></li>
+                    <li class="nav-item"><a href="./Ajustes.html" class="nav-link">AJUSTES</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header class ="header">
+            <div class="center-item">
+                <h2 class="title">BIENVENIDO A MIND FULL</h2>
+                <p>
+                    Descubre el camino hacia tu bienestar emocional con MIND FULL. 
+                    ¿Te sientes abrumado o inseguro sobre tu salud mental? Estamos aquí para ayudarte.
+                    Encuentra recursos inspiradores, consejos prácticos y herramientas interactivas 
+                    que te ayudarán a identificar si necesitas apoyo psicológico. 
+                    Ya sea que busques autoayuda o asesoramiento profesional, 
+                    te guiamos para que tomes decisiones informadas y encuentres el apoyo adecuado.
+                    Tu viaje hacia una mente más saludable comienza aquí.
+                </p>
+            </div>
+        </header>
+
+        <!-- Encuesta Section -->
+        <header class="header">
+            <div class="center-item">
+                <h2>ENCUESTA</h2>
+                <p>
+                    Completa nuestra encuesta rápida para evaluar tu estado emocional y determinar 
+                    si podrías beneficiarte de ayuda profesional. 
+                    Ya sea que busques autoayuda o asesoramiento profesional, 
+                    te guiamos para que tomes decisiones informadas y encuentres el apoyo adecuado.
+                    Tu viaje hacia una mente más saludable comienza aquí.
+                </p>
+                <a href="encuesta.html" class="btn btn-custom">¡INICIAR EVALUACIÓN!</a>
+            </div>
+        </header>
+        <!-- Centros de Psicología -->
+        <header class="header">
+            <div class="center-item">
+                <h2>CENTROS DE PSICOLOGÍA</h2>
+            </div>
+            <div class="center-item">
+                <h4>Centro de Psicología Integral</h4>
+                <p>Dirección: Calle Principal #123</p>
+                <p>Teléfono: 555-5678</p>
+            </div>
+            <div class="center-item">
+                <h4>Centro Psicológico Renacer</h4>
+                <p>Dirección: Avenida Central #456</p>
+                <p>Teléfono: 555-5678</p>
+            </div>
+            <div class="center-item">
+                <h4>Centro de Atención Psicológica</h4>
+                <p>Dirección: Plaza Mayor #789</p>
+                <p>Teléfono: 555-9012</p>
+            </div>
+        </header>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Mind Full. Todos los derechos reservados.</p>
+        <p><a href="#">Contacto</a> | <a href="#">Privacidad</a> | <a href="#">Términos</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/page/pantalla_inicial.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

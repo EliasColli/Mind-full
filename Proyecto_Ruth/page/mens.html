@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperación de Contraseña - Mind Full</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #007bff; /* Fondo azul rey */
+            background-image: linear-gradient(to right, #007bff, #0056b3); /* Gradiente de color */
+            background-image: url('../img/fondo1.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #070707; /* Texto blanco para contrastar */
+            height: 100vh; /* Altura completa de la pantalla */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 800px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.671); /* Fondo blanco con más transparencia */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .img-container {
+            background-color: #b3e6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 15px 0 0 15px;
+        }
+        .img-container img {
+            max-width: 100px;
+        }
+        .content-container {
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+        }
+        .content-container h2 {
+            margin-bottom: 20px;
+            color: #131312; /* Color amarillo para resaltar */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para mayor legibilidad */
+            font-size: 2.5rem;
+        }
+        .form-control-plaintext {
+            background-color: #c9e7fc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            color: black;
+            font-size: 1.1rem; /* Aumentar tamaño de la fuente */
+        }
+        .btn-custom {
+            background-color: #e1ffd2;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.3rem; /* Aumentar tamaño de la fuente */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra de texto para el botón */
+        }
+        .btn-custom:hover {
+            background-color: #ccf7ab;
+        }
+        .back-icon {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: #ccc;
+            border-radius: 50%;
+            padding: 10px;
+        }
+        .re {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="img-container">
+            <img src="../img/mind.png" alt="Logo">
+        </div>
+        <div class="content-container">
+            <h2>Enviamos tu contraseña al correo:</h2>
+            <input type="text" class="form-control-plaintext text-center" value="mauoxtepool@gmail.com" readonly>
+            <p>¿Te llegó? Puedes intentar nuevamente</p>
+            <button class="btn btn-custom">Reenviar</button>
+            <a href="/page/BIENVENIDOS.html"><button class="btn btn-custom">Regresar</button></a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/page/mens.js"></script>
+</body>
+</html>
